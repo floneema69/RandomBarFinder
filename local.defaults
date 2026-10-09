@@ -1,0 +1,7 @@
+## Valeur par défaut utilisée par le plugin Secrets Gradle quand
+## local.properties ne contient pas de clé. Ce fichier est versionné.
+##
+## Pour ta vraie clé, crée local.properties à la racine du projet
+## (il est ignoré par git) avec la ligne :
+##   MAPS_API_KEY=ta_cle_ici
+MAPS_API_KEY=DEFAULT_API_KEY

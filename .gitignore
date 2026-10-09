@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+build/
+
+# Kotlin (fichiers de session du compilateur)
+.kotlin/
+
+# Secrets et configuration locale
+local.properties
+.env
+secrets.properties
+
+# Android Studio
+*.iml
+.idea/*
+!.idea/gradle.xml
+!.idea/jarRepositories.xml
+captures/
+
+# NDK et compilation native
+.externalNativeBuild/
+.cxx/
+
+# APK et bundles générés
+*.apk
+*.aab
+*.ap_
+
+# Clés de signature
+*.jks
+*.keystore
+
+# Google Services (Firebase)
+google-services.json
+
+# Logs et profilage
+*.log
+*.hprof
+
+# Système
+.DS_Store
