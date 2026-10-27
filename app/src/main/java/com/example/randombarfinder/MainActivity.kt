@@ -4,22 +4,27 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.randombarfinder.data.remote.createPlacesService
+import com.example.randombarfinder.data.repository.BarsRepositoryImpl
+import com.example.randombarfinder.ui.screen.MapScreen
 import com.example.randombarfinder.ui.theme.RandomBarFinderTheme
+import com.example.randombarfinder.viewmodel.BarsViewModel
+import com.example.randombarfinder.viewmodel.BarsViewModelFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val service = createPlacesService(BuildConfig.MAPS_API_KEY)
+        val repository = BarsRepositoryImpl(service)
+        val factory = BarsViewModelFactory(repository)
+
         setContent {
             RandomBarFinderTheme {
-
+                val viewModel: BarsViewModel = viewModel(factory = factory)
+                MapScreen(viewModel)
             }
         }
     }

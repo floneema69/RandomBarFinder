@@ -12,9 +12,7 @@ secrets.properties
 
 # Android Studio
 *.iml
-.idea/*
-!.idea/gradle.xml
-!.idea/jarRepositories.xml
+.idea/
 captures/
 
 # NDK et compilation native

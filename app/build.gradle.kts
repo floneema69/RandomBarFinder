@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
@@ -45,6 +46,10 @@ dependencies {
     implementation(libs.play.services.maps)
 
 // Google maps Compose
+    implementation(libs.retrofit)
+    implementation(libs.converter.kotlinx.serialization)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.logging.interceptor)
     implementation(libs.maps.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
@@ -63,4 +68,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.vectordrawable)
     implementation(libs.androidx.vectordrawable.animated)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
